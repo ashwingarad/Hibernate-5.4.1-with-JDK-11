@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-mapping xmlns="http://www.hibernate.org/xsd/orm/hbm">
+
+    <class name="com.model.Pancard" table="pancard" catalog="ashwindb">
+        <id name="id">
+            <column name="eid"/>
+            <generator class="foreign">
+                <param name="property">employee</param>
+            </generator>
+        </id>
+
+        <property name="pnum">
+            <column name="pan_num"/>
+        </property>
+
+        <one-to-one name="employee" class="com.model.Employee" constrained="true"/>
+    </class>
+    <!--Pancard Table-->
+    <!--eid, pan_num-->
+</hibernate-mapping>

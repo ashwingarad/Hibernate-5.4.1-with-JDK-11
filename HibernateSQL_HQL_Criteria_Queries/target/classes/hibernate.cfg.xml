@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-configuration xmlns="http://www.hibernate.org/xsd/orm/cfg">
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/test?useSSL=false</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">false</property>
+        <mapping resource="Employee.hbm.xml"/>
+        <mapping resource="Department.hbm.xml"/>
+        <mapping resource="Pancard.hbm.xml"/>
+        <mapping resource="Author.hbm.xml"/>
+        <mapping resource="Book.hbm.xml"/>
+        <!--<mapping class="com.model.Department"/>
+        <mapping class="com.model.Employee"/>
+        <mapping class="com.model.Pancard"/>
+        <mapping class="com.model.Author"/>
+        <mapping class="com.model.Book"/>-->
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-mapping xmlns="http://www.hibernate.org/xsd/hibernate-mapping">
+
+    <class name="com.model.Department" table="department" catalog="ashwindb">
+        <id name="id">
+            <column name="dept_id"/>
+            <generator class="identity"/>
+        </id>
+
+        <property name="dname">
+            <column name="dept_name"/>
+        </property>
+
+        <set name="employeeSet" table="employee" lazy="true" cascade="all" inverse="true">
+            <key column="d_id" not-null="true"/>   <!--Employee foriegn key column name-->
+            <one-to-many class="com.model.Employee"/>
+        </set>
+    </class>
+
+    <!--Department Table-->
+    <!--dept_id, dept_name-->
+</hibernate-mapping>

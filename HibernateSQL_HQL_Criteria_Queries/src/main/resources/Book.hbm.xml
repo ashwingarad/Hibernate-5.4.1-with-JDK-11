@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-mapping xmlns="http://www.hibernate.org/xsd/orm/hbm">
+    <class name="com.model.Book" table="book" catalog="test">
+        <id name="id">
+            <generator class="identity"/>
+        </id>
+
+        <property name="bname">
+            <column name="book_name"/>
+        </property>
+
+        <property name="price">
+            <column name="book_price"/>
+        </property>
+
+        <set name="authorSet" table="authorbook" cascade="all">
+            <key column="bid"></key>
+            <many-to-many class="com.model.Author" column="aid"></many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>
